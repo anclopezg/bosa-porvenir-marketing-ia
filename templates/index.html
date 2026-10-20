@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚀 Laboratorio de IA para tu Negocio · Bosa Porvenir</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="lab-header">
+    <div class="lab-badge">USO LOCAL · SOLO PARA ESTE COMPUTADOR</div>
+    <h1>🚀 Laboratorio de IA para tu Negocio · Bosa Porvenir</h1>
+    <p>Estas son las 7 herramientas de IA del taller de marketing digital, para que las practiques
+       antes del evento. Elegí tu tipo de negocio, contá un poco de tu caso, y la IA te entrega
+       contenido listo para usar — copys, mensajes de WhatsApp, campañas, calendario, piezas gráficas
+       y una crítica de tus fotos.</p>
+</header>
+
+<main class="lab-main">
+
+    <nav class="tool-nav">
+        <a href="#tool1">✍️ Copys</a>
+        <a href="#tool2">💬 WhatsApp</a>
+        <a href="#tool3">🎯 Campañas</a>
+        <a href="#tool4">📊 Métricas</a>
+        <a href="#tool5">📅 Calendario</a>
+        <a href="#tool6">🎨 Piezas</a>
+        <a href="#tool7">📸 Foto</a>
+    </nav>
+
+    <!-- ============ TOOL 1 ============ -->
+    <section id="tool1">
+        <div class="section-label">Herramienta 1</div>
+        <h2 class="section-title">✍️ Generador de Copys con IA</h2>
+        <p class="section-subtitle">Describe tu negocio → la IA escribe los copys listos para publicar</p>
+        <div class="ai-card">
+            <div class="ai-g3">
+                <div>
+                    <label class="ai-lbl">Tipo de negocio</label>
+                    <select class="ai-sel" id="ia1-negocio">
+                        <option>Tienda de barrio / minimercado</option>
+                        <option>Confección y ropa (sudaderas, uniformes, ropa deportiva)</option>
+                        <option>Restaurante o comidas rápidas</option>
+                        <option>Panadería o repostería</option>
+                        <option>Peluquería, barbería o estética</option>
+                        <option>Ferretería</option>
+                        <option>Servicios técnicos (plomería, electricidad, motos)</option>
+                        <option>Ventas por catálogo</option>
+                        <option>Papelería o miscelánea</option>
+                        <option>Otro emprendimiento</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="ai-lbl">¿Para qué red?</label>
+                    <select class="ai-sel" id="ia1-red">
+                        <option>Instagram (post)</option>
+                        <option>Facebook (publicación)</option>
+                        <option>Estado de WhatsApp</option>
+                        <option>Guion para Reel o TikTok</option>
+                        <option>Anuncio pagado en Meta</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="ai-lbl">Objetivo de la publicación</label>
+                    <select class="ai-sel" id="ia1-objetivo">
+                        <option>Vender un producto puntual</option>
+                        <option>Que me escriban por WhatsApp</option>
+                        <option>Dar a conocer el negocio</option>
+                        <option>Promoción o descuento</option>
+                        <option>Producto nuevo</option>
+                        <option>Generar confianza (testimonio)</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label class="ai-lbl">Cuéntame de tu negocio — entre más detalle, mejor sale</label>
+                <textarea class="ai-ta" id="ia1-detalle" placeholder="Ej: Vendo sudaderas y uniformes en Bosa Porvenir, cerca al Mercado de Bosa. Precios desde $35.000. Hago domicilios en Bosa y alrededores. Lo que más se vende son los uniformes de colegio..."></textarea>
+            </div>
+            <button class="ai-btn" onclick="runTool('ia1')">✍️ Generar mis copys</button>
+            <div id="ia1-load" class="ai-load" style="display:none;">✍️ Escribiendo contenido para tu negocio...</div>
+            <div id="ia1-rw" class="ai-rw" style="display:none;">
+                <button class="ai-cp" onclick="copyRes('ia1')">📋 Copiar</button>
+                <div id="ia1-res" class="ai-res"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TOOL 2 ============ -->
+    <section id="tool2">
+        <div class="section-label">Herramienta 2</div>
+        <h2 class="section-title">💬 Asistente de WhatsApp Business IA</h2>
+        <p class="section-subtitle">Genera tus mensajes automáticos, respuestas rápidas y guion de venta</p>
+        <div class="ai-card">
+            <div class="ai-g3">
+                <div>
+                    <label class="ai-lbl">¿Qué necesitas generar?</label>
+                    <select class="ai-sel" id="ia2-que">
+                        <option>Mensaje de bienvenida</option>
+                        <option>Mensaje de ausencia (fuera de horario)</option>
+                        <option>Respuestas rápidas para preguntas frecuentes</option>
+                        <option>Guion completo de venta</option>
+                        <option>Mensaje de difusión para clientes</option>
+                        <option>Mensaje de seguimiento a quien no compró</option>
+                        <option>Todo el paquete completo</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="ai-lbl">Tipo de negocio</label>
+                    <select class="ai-sel" id="ia2-negocio">
+                        <option>Tienda de barrio / minimercado</option>
+                        <option>Confección y ropa</option>
+                        <option>Restaurante o comidas rápidas</option>
+                        <option>Panadería o repostería</option>
+                        <option>Peluquería, barbería o estética</option>
+                        <option>Ferretería</option>
+                        <option>Servicios técnicos a domicilio</option>
+                        <option>Ventas por catálogo</option>
+                        <option>Otro emprendimiento</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="ai-lbl">Tono del mensaje</label>
+                    <select class="ai-sel" id="ia2-tono">
+                        <option>Cercano y de barrio</option>
+                        <option>Formal y profesional</option>
+                        <option>Juvenil y desenfadado</option>
+                        <option>Cálido y familiar</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label class="ai-lbl">Datos de tu negocio (horario, zona, precios, domicilios, medios de pago)</label>
+                <textarea class="ai-ta" id="ia2-datos" placeholder="Ej: Confecciones Bosa Porvenir. Horario lunes a sábado 8am-6pm. Domicilios gratis en Bosa Porvenir por compras sobre $60.000. Recibo efectivo, Nequi y Daviplata..."></textarea>
+            </div>
+            <button class="ai-btn" onclick="runTool('ia2')">💬 Generar mis mensajes</button>
+            <div id="ia2-load" class="ai-load" style="display:none;">💬 Preparando tus mensajes automáticos...</div>
+            <div id="ia2-rw" class="ai-rw" style="display:none;">
+                <button class="ai-cp" onclick="copyRes('ia2')">📋 Copiar</button>
+                <div id="ia2-res" class="ai-res"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TOOL 3 ============ -->
+    <section id="tool3">
+        <div class="section-label">Herramienta 3</div>
+        <h2 class="section-title">🎯 Planificador de Campañas IA</h2>
+        <p class="section-subtitle">La IA arma la segmentación, el presupuesto y los textos de tu anuncio</p>
+        <div class="ai-card">
+            <div class="ai-g3">
+                <div>
+                    <label class="ai-lbl">Plataforma</label>
+                    <select class="ai-sel" id="ia3-plataforma">
+                        <option>Meta Ads (Facebook e Instagram)</option>
+                        <option>TikTok Ads</option>
+                        <option>Ambas</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="ai-lbl">Presupuesto diario</label>
+                    <select class="ai-sel" id="ia3-presupuesto">
+                        <option>$8.000 – $10.000 pesos</option>
+                        <option>$10.000 – $20.000 pesos</option>
+                        <option>$20.000 – $50.000 pesos</option>
+                        <option>Más de $50.000 pesos</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="ai-lbl">Objetivo principal</label>
+                    <select class="ai-sel" id="ia3-objetivo">
+                        <option>Que me escriban por WhatsApp</option>
+                        <option>Que visiten el local</option>
+                        <option>Vender un producto específico</option>
+                        <option>Dar a conocer el negocio</option>
+                        <option>Promocionar una fecha especial</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label class="ai-lbl">Describe tu negocio, tu zona y tu cliente ideal</label>
+                <textarea class="ai-ta" id="ia3-descripcion" placeholder="Ej: Peluquería en Bosa Porvenir. Mis clientas son mujeres de 25 a 50 años del sector. Quiero promocionar el paquete de corte + tinte a $55.000 para el mes de las madres..."></textarea>
+            </div>
+            <button class="ai-btn" onclick="runTool('ia3')">🎯 Armar mi campaña</button>
+            <div id="ia3-load" class="ai-load" style="display:none;">🎯 Diseñando tu campaña y segmentación...</div>
+            <div id="ia3-rw" class="ai-rw" style="display:none;">
+                <button class="ai-cp" onclick="copyRes('ia3')">📋 Copiar</button>
+                <div id="ia3-res" class="ai-res"></div>
+            </div>
+            <p class="ai-hint">💡 Recuerda: primero ordena el perfil y el catálogo, después invierte en anuncios.</p>
+        </div>
+    </section>
+
+    <!-- ============ TOOL 4 ============ -->
+    <section id="tool4">
+        <div class="section-label">Herramienta 4</div>
+        <h2 class="section-title">📊 Analizador de Métricas IA</h2>
+        <p class="section-subtitle">Ingresa tus números → la IA te dice qué significan y qué hacer</p>
+        <div class="ai-card">
+            <div class="ai-g3">
+                <div>
+                    <label class="ai-lbl">¿Cuánto invertiste?</label>
+                    <select class="ai-sel" id="ia4-inversion">
+                        <option>Nada — solo contenido gratis</option>
+                        <option>Menos de $50.000 en total</option>
+                        <option>$50.000 – $150.000</option>
+                        <option>$150.000 – $500.000</option>
+                        <option>Más de $500.000</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="ai-lbl">Periodo analizado</label>
+                    <select class="ai-sel" id="ia4-periodo">
+                        <option>Última semana</option>
+                        <option>Últimas 2 semanas</option>
+                        <option>Último mes</option>
+                        <option>Últimos 3 meses</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="ai-lbl">¿Qué quieres saber?</label>
+                    <select class="ai-sel" id="ia4-pregunta">
+                        <option>¿Me está sirviendo o estoy perdiendo plata?</option>
+                        <option>¿Debo invertir más o menos?</option>
+                        <option>¿Por qué me ven pero no me escriben?</option>
+                        <option>¿Por qué me escriben pero no compran?</option>
+                        <option>¿Qué debo cambiar primero?</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label class="ai-lbl">Escribe tus números tal como los ves (alcance, mensajes, ventas, ganancia por venta)</label>
+                <textarea class="ai-ta" id="ia4-numeros" placeholder="Ej: En la última semana el anuncio alcanzó 4.300 personas, me escribieron 22 por WhatsApp, y de esos cerré 5 ventas. Invertí $70.000. Cada venta me deja una ganancia de $18.000..."></textarea>
+            </div>
+            <button class="ai-btn" onclick="runTool('ia4')">📊 Analizar mis resultados</button>
+            <div id="ia4-load" class="ai-load" style="display:none;">📊 Analizando tus números...</div>
+            <div id="ia4-rw" class="ai-rw" style="display:none;">
+                <button class="ai-cp" onclick="copyRes('ia4')">📋 Copiar</button>
+                <div id="ia4-res" class="ai-res"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TOOL 5 ============ -->
+    <section id="tool5">
+        <div class="section-label">Herramienta 5</div>
+        <h2 class="section-title">📅 Calendario de Contenido de 30 Días</h2>
+        <p class="section-subtitle">La IA arma tu plan de publicación con los textos ya escritos</p>
+        <div class="ai-card">
+            <div class="ai-g3">
+                <div>
+                    <label class="ai-lbl">¿Cuánto tiempo tienes?</label>
+                    <select class="ai-sel" id="ia5-tiempo">
+                        <option>Muy poco — 3 publicaciones por semana</option>
+                        <option>Moderado — 5 por semana</option>
+                        <option>Bastante — publicación diaria</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="ai-lbl">Redes que vas a usar</label>
+                    <select class="ai-sel" id="ia5-redes">
+                        <option>Solo WhatsApp (estados)</option>
+                        <option>Instagram y WhatsApp</option>
+                        <option>Instagram, Facebook y WhatsApp</option>
+                        <option>TikTok e Instagram</option>
+                        <option>Todas las anteriores</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="ai-lbl">Temporada o fecha especial</label>
+                    <select class="ai-sel" id="ia5-temporada">
+                        <option>Mes normal, sin fecha especial</option>
+                        <option>Amor y amistad</option>
+                        <option>Día de la madre / del padre</option>
+                        <option>Navidad y fin de año</option>
+                        <option>Regreso a clases</option>
+                        <option>Aniversario del negocio</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label class="ai-lbl">Cuéntame de tu negocio y qué quieres lograr este mes</label>
+                <textarea class="ai-ta" id="ia5-negocio" placeholder="Ej: Tengo una panadería en Bosa Porvenir. Este mes quiero dar a conocer las tortas personalizadas, que es lo que más me deja ganancia. Puedo grabar videos los domingos..."></textarea>
+            </div>
+            <button class="ai-btn" onclick="runTool('ia5')">📅 Armar mi calendario</button>
+            <div id="ia5-load" class="ai-load" style="display:none;">📅 Diseñando tu plan de 30 días...</div>
+            <div id="ia5-rw" class="ai-rw" style="display:none;">
+                <button class="ai-cp" onclick="copyRes('ia5')">📋 Copiar calendario</button>
+                <div id="ia5-res" class="ai-res"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TOOL 6 ============ -->
+    <section id="tool6">
+        <div class="section-label">Herramienta 6</div>
+        <h2 class="section-title">🎨 Generador de Piezas Gráficas IA</h2>
+        <p class="section-subtitle">La IA diseña tu post en vectores — se ve, se descarga y se edita en Canva</p>
+        <div class="ai-card">
+            <div class="ai-g2">
+                <div style="display:flex;flex-direction:column;gap:1rem;">
+                    <div>
+                        <label class="ai-lbl">Tipo de pieza</label>
+                        <select class="ai-sel" id="pz-tipo">
+                            <option>Promoción con descuento</option>
+                            <option>Producto nuevo</option>
+                            <option>Horario de atención</option>
+                            <option>Anuncio de domicilios</option>
+                            <option>Testimonio de cliente</option>
+                            <option>Fecha especial</option>
+                            <option>Medios de pago aceptados</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="ai-lbl">Formato</label>
+                        <select class="ai-sel" id="pz-formato">
+                            <option>Post cuadrado (Instagram/Facebook)</option>
+                            <option>Historia vertical (Stories/Estado)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="ai-lbl">Estilo visual</label>
+                        <select class="ai-sel" id="pz-estilo">
+                            <option>Colorido y llamativo</option>
+                            <option>Elegante y minimalista</option>
+                            <option>Retro / vintage</option>
+                            <option>Moderno con formas geométricas</option>
+                            <option>Artesanal y cálido</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="ai-lbl">Texto que debe aparecer en la pieza</label>
+                        <textarea class="ai-ta" id="pz-texto" style="min-height:60px;" placeholder="Ej: 2x1 en uniformes · Solo esta semana · Bosa Porvenir · Pida al 300 123 4567"></textarea>
+                    </div>
+                    <button class="ai-btn" onclick="pzGenerar()">🎨 Diseñar pieza</button>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:0.6rem;">
+                    <div id="pz-idle" class="pz-idle">
+                        <span style="font-size:2.4rem;">🖼️</span>
+                        <span>Tu pieza aparecerá aquí<br><strong>lista para descargar</strong></span>
+                        <span style="font-size:0.78rem;">Descárgala en SVG o PNG<br>y termínala en Canva</span>
+                    </div>
+                    <div id="pz-load" class="ai-load" style="display:none;">🎨 Diseñando tu pieza gráfica...</div>
+                    <div id="pz-out" style="display:none;">
+                        <div class="pz-preview" id="pz-canvas"></div>
+                        <p class="ai-hint" style="text-align:center;margin-top:0.5rem;">👆 Clic derecho sobre la imagen → "Guardar imagen como…"</p>
+                        <div class="pz-actions">
+                            <a class="pz-link svg" id="pz-svg-link" download="pieza.svg" href="#">⬇ SVG</a>
+                            <a class="pz-link png" id="pz-png-link" download="pieza.png" href="#">⬇ PNG</a>
+                            <button class="ai-btn small secondary" onclick="pzGenerar()">🔄 Otra versión</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="ai-hint" style="text-align:center;">💡 Descárgala y súbela a Canva para agregarle la foto real de tu producto y tu logo.</p>
+        </div>
+    </section>
+
+    <!-- ============ TOOL 7 ============ -->
+    <section id="tool7">
+        <div class="section-label">Herramienta 7</div>
+        <h2 class="section-title">📸 ¿Tu Foto Vende? — Crítica con Visión IA</h2>
+        <p class="section-subtitle">Sube la foto de tu producto → la IA te dice qué corregir antes de publicar</p>
+        <div class="ai-card">
+            <div class="ai-g2">
+                <div style="display:flex;flex-direction:column;gap:1rem;">
+                    <div>
+                        <label class="ai-lbl">¿Qué estás mostrando?</label>
+                        <select class="ai-sel" id="fo-tipo">
+                            <option>Producto para vender</option>
+                            <option>Plato de comida</option>
+                            <option>Fachada del negocio</option>
+                            <option>Trabajo terminado (antes/después)</option>
+                            <option>Foto de perfil del negocio</option>
+                            <option>Pieza gráfica o volante</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="ai-lbl">¿Dónde la vas a publicar?</label>
+                        <select class="ai-sel" id="fo-donde">
+                            <option>Catálogo de WhatsApp</option>
+                            <option>Post de Instagram</option>
+                            <option>Perfil de Empresa en Google</option>
+                            <option>Anuncio pagado</option>
+                            <option>Estado de WhatsApp</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="ai-lbl">📷 Tu foto</label>
+                        <input type="file" id="fo-file" accept="image/*" style="display:none;">
+                        <label for="fo-file" id="fo-dz" class="fo-dropzone">
+                            <span style="font-size:2rem;">📷</span>
+                            <span>Hacé clic para subir una foto<br><small>JPG o PNG, máximo 8MB</small></span>
+                        </label>
+                        <div id="fo-prev" class="fo-preview" style="display:none;">
+                            <img id="fo-img" src="" alt="Foto subida">
+                        </div>
+                    </div>
+                    <button class="ai-btn" onclick="foAnalizar()">📸 Analizar foto</button>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:0.6rem;">
+                    <div id="fo-load" class="ai-load" style="display:none;">📸 Analizando tu foto...</div>
+                    <div id="fo-rw" class="ai-rw" style="display:none;">
+                        <button class="ai-cp" onclick="copyRes('fo')">📋 Copiar</button>
+                        <div id="fo-res" class="ai-res"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="lab-footer">
+    <p>Laboratorio de IA · Uso local para el taller de Bosa Porvenir — no publicado en internet.</p>
+</footer>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
